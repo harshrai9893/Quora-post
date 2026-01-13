@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New post</title>
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <form method="post" action="/posts">
-        <input placeholder="enter your username" name="username"/><br><br>
-        <textarea placeholder="enter your content" name="content"></textarea><br>
-        <button>submit</button>
-    </form>
+
+<div class="page">
+    <h2 class="title">Create New Post</h2>
+
+    <div class="form-card">
+        <form method="POST" action="/posts">
+            <input class="input" name="username" placeholder="Your username" required>
+
+            <textarea class="input textarea" name="content" placeholder="Write your post..." required></textarea>
+
+            <button class="btn primary">Submit</button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

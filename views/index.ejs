@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quora All posts</title>
-    <link rel="stylesheet" href="/style.css"/>
+    <title>Quora Posts</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Quora Posts</h1>
-    <% for(post of posts){%>
-        <div class="post">
-            <h3 class="user">@<%=post.username%></h3>
-            <h4 class="content"><%=post.content%></h4>
-            <br>
-            <a href="http://localhost:8080/posts/<%=post.id%>">see in detail</a>
-            <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
-          <form method="Post" action="/posts/<%= post.id %>?_method=DELETE">
-            <button>Delete Post</button>
-          </form> 
-        </div>  
-    <%}%>
-    <br>
-    <br>
-    <a href="http://localhost:8080/posts/new">Create new post</a>
+
+<div class="page">
+    <h1 class="title">Quora Posts</h1>
+
+    <a href="/posts/new" class="btn primary">+ Create Post</a>
+
+    <% for(let post of posts){ %>
+        <div class="post-card">
+            <h3 class="user">@<%= post.username %></h3>
+            <p class="content"><%= post.content %></p>
+
+            <div class="actions">
+                <a href="/posts/<%= post.id %>" class="link">View</a>
+                <a href="/posts/<%= post.id %>/edit" class="link edit">Edit</a>
+
+                <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button class="btn danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</div>
+
 </body>
 </html>

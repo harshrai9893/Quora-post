@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post in detail</title>
-        <link rel="stylesheet" href="/style.css"/>
-
+    <title>Post Detail</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h2>here is your post in detail</h2>
-    <p>post id : <%= post.id %></p>
-     <div class="post">
-            <h3 class="user">@<%=post.username%></h3>
-            <h4 class="content"><%=post.content%></h4>
-        </div>  
+
+<div class="page">
+    <h2 class="title">Post Detail</h2>
+
+    <div class="post-card">
+        <p class="meta">Post ID: <%= post.id %></p>
+        <h3 class="user">@<%= post.username %></h3>
+        <p class="content"><%= post.content %></p>
+    </div>
+</div>
+
 </body>
 </html>
